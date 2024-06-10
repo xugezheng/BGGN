@@ -1,0 +1,13 @@
+# COMMON args
+dset: celebA  
+seed: 2023 
+key_info: f_model_train # folder name for trained f_model under ./DATASOURCE/celebA/Models
+
+#------------------------------------------------------------------------------------
+# Dirs
+data_root: ./DATASOURCE/celebA
+output_dir: ./output/celebA_f_model_train # for log
+
+#------------------------------------------------------------------------------------
+# f model train
+f_model_train_epoch: 3

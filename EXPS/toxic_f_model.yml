@@ -1,0 +1,13 @@
+# COMMON args
+dset: toxic 
+seed: 2023 
+key_info: f_model_train # folder name for trained f_model under ./DATASOURCE/toxic/Models
+
+#------------------------------------------------------------------------------------
+# Dirs
+data_root: ./DATASOURCE/toxic
+output_dir: ./output/toxic_f_model_train  # for log
+
+#------------------------------------------------------------------------------------
+# f model train
+f_model_train_epoch: 2

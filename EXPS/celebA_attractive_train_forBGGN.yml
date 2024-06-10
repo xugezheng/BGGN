@@ -1,0 +1,82 @@
+# COMMON args
+dset: celebA  
+seed: 2024 
+key_info: celebA_attractive_fast_train
+
+#------------------------------------------------------------------------------------
+# Dirs
+data_root: ./DATASOURCE/celebA
+output_dir: ./output/celebA_attractive_fast_train
+
+#------------------------------------------------------------------------------------
+# DATASET Specific
+# common
+target_id: 2  
+class_dim: 2 
+output_dim: 20
+
+#------------------------------------------------------------------------------------
+# df_regroup
+te_par: 0.3
+f_model_df_regroup_dir: data/data_frame_regroup_org.pickle 
+f_model_df_regroup_norm: org
+
+#------------------------------------------------------------------------------------
+# predictor train
+reweight: inverse
+pred_dir: bias_pred.pt 
+pred_type: tf_reg_cls
+pred_train_epoch: 60
+pred_lr: 1.0e-3
+pred_hidden_dim: 512
+pred_fea_dim: 256
+pred_cls_interval: 0.1
+pred_cls_num: 10
+pred_reg_loss_coef: 0.01
+pred_ce_loss_coef: 1
+
+#------------------------------------------------------------------------------------
+# vae train
+vae_dir: vae_model 
+latent_dim: 200 
+hidden_dim: 500
+vae_pretrain_epoch: 3
+vae_train_kl_weight: 0.1
+en_vae_lr: 1.0e-3
+de_vae_lr: 1.0e-3
+
+
+#------------------------------------------------------------------------------------
+# vae bias train 
+z_resample: 10
+batch_size: 128
+ft_batch_size: 512
+mask_bs_coef: 0.2
+vae_bias_epoch: 500 
+vae_bias_reg_coef: 1.0
+vae_bias_r_local: 0.01
+vae_bias_r_global: 0.01
+vae_bias_neglog: 0.05
+vae_bias_b: 10000 
+vae_bias_pred_mode: nn 
+vae_bias_train_en: 1 
+en_vae_bias_lr: 2.0e-05 
+de_vae_bias_lr: 1.0e-05 
+
+#------------------------------------------------------------------------------------
+# generation evaluation
+evaluation_batch_num: 100
+vae_eval_bias_thresh: 0.3
+## precision at k
+precision_k: 1000
+## recall at k
+recall_k: 200 #10
+recall_metric: bar
+## rr
+rr_k: 5
+rr_k_ratio: 0.05
+## dcg
+dcg_k: 20
+dcg_gains: linear # exponential
+
+

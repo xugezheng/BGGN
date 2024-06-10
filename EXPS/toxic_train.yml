@@ -1,0 +1,80 @@
+# COMMON args
+dset: toxic 
+seed: 2024
+key_info: toxic_test
+
+#------------------------------------------------------------------------------------
+# Dirs
+data_root: ./DATASOURCE/toxic
+output_dir: ./output/toxic_train
+
+#------------------------------------------------------------------------------------
+# DATASET Specific
+# common
+target_id: 0  
+class_dim: 2 # per sens attr class num
+
+
+#------------------------------------------------------------------------------------
+# df_regroup
+te_par: 0.3
+f_model_df_regroup_dir: null
+f_model_df_regroup_norm: org
+
+#------------------------------------------------------------------------------------
+# predictor train
+reweight: inverse
+pred_dir: null 
+pred_type: mlp_reg_cls
+pred_train_epoch: 80
+pred_lr: 1.0e-3 
+pred_hidden_dim: 512
+pred_fea_dim: 256
+pred_cls_interval: 0.05
+pred_cls_num: 10
+pred_reg_loss_coef: 0.1
+pred_ce_loss_coef: 1
+
+#------------------------------------------------------------------------------------
+# vae train
+vae_dir: null 
+latent_dim: 200 
+hidden_dim: 500
+vae_pretrain_epoch: 10
+vae_train_kl_weight: 0.1
+en_vae_lr: 1.0e-3
+de_vae_lr: 1.0e-3
+
+#------------------------------------------------------------------------------------
+# vae bias train
+z_resample: 3
+batch_size: 64
+ft_batch_size: 128
+mask_bs_coef: 1.0
+vae_bias_epoch: 500
+vae_bias_reg_coef: 0.05 
+vae_bias_r_local: 0.01 
+vae_bias_r_global: 0.01 
+vae_bias_neglog: 0.05
+vae_bias_b: 5000 
+vae_bias_pred_mode: nn 
+knn_k: 2
+en_vae_bias_lr: 2.0e-05 
+de_vae_bias_lr: 1.0e-05
+
+#------------------------------------------------------------------------------------
+# generation evaluation
+evaluation_batch_num: 100
+vae_eval_bias_thresh: 0.30
+## precision at k
+precision_k: 1000
+## recall at k
+recall_k: 200 
+## dcg
+dcg_k: 20
+dcg_gains: linear # exponential
+## rr
+rr_k: 5
+rr_k_ratio: 0.05
+
+

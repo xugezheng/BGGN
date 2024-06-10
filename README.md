@@ -1,8 +1,11 @@
 # BGGN
 
 Official Implementation of our 2024 ICML paper:
+
 **Intersectional Unfairness Discovery**. 
+
 *Gezheng Xu, Qi Chen, Charles Ling, Boyu Wang, Changjian Shui*
+
 ([arxiv](https://arxiv.org/abs/2405.20790))
 
 ## Current (Important) File Organization:

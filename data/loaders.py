@@ -1,7 +1,7 @@
 import pandas as pd
 import logging
 
-from utils import df_reduce
+from utils.utils import df_reduce
 from data.celebA import get_loader_celebA
 from data.toxic import get_loader_toxic
 

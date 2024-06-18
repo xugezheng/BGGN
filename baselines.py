@@ -11,16 +11,16 @@ import copy
 from sklearn import tree
 from sklearn.tree import  DecisionTreeRegressor
 
-from baseline_utils import (
+from utils.baseline_utils import (
     calculate_bias_mean_from_dict,
     get_regression_tree_paths,
     recover_path,
     replace_negatives,
     filter_by_lf,
 )
-from utils import df_reduce, seed_set
-from hypers import SENS_FEAS_ALL, CELEBA_2_FEAS_ID, TOXIC_25_FEAS_ID
-from loggers import TxtLogger, set_logger
+from utils.utils import df_reduce, seed_set
+from utils.hypers import SENS_FEAS_ALL, CELEBA_2_FEAS_ID, TOXIC_25_FEAS_ID
+from utils.loggers import TxtLogger, set_logger
 import logging
 logger = logging.getLogger("intersectionalFair")
 

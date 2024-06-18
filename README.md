@@ -8,7 +8,7 @@ Official Implementation of our 2024 ICML paper:
 
 ([arxiv](https://arxiv.org/abs/2405.20790))
 
-## Current (Important) File Organization:
+<!-- ## Current (Important) File Organization:
   - ```/DATASOURCE/``` # dataset (celeba and toxic)
   - ```/EXPS/``` # training scripts
   - ```/output/``` # intermediate data, logs and model params will be stored here
@@ -21,8 +21,43 @@ Official Implementation of our 2024 ICML paper:
   - ```loaders.py``` # dataloader
   - ```network.py``` # all networks utilzed
   - ```hypers.py``` # fixed hyperparams used in this paper
-  - ```losses.py``` # external losses used in this paper
+  - ```losses.py``` # external losses used in this paper -->
 
+## Current (Important) File Organization:
+
+```markdown
+BGGN/
+    ├── EXPS/                           # training scripts
+    ├── DATASOURCE/                     # dataset (celeba and toxic)
+    ├── output/                         # intermediate data, logs and model params will be stored here
+    ├── .gitignore
+    ├── README.md
+    ├── baselines.py                    # main training code for (relaxed) search tree methods
+    ├── train_f_model.py                # main training code for f(x) 
+    ├── train.py                        # main training code
+    ├── layers/                         # all networks utilzed
+    │   └── network.py
+    ├── utils/                          # auxiliary utils 
+    │   ├── utils.py
+    │   ├── vae_bias_utils.py
+    │   ├── evaluation_utils.py
+    │   └── baseline_utils.py
+    │   ├── evaluation.py
+    │   ├── losses.py
+    │   ├── loggers.py
+    │   ├── hypers.py                   # fixed hyperparams used in this paper
+    ├── data/                           # data pre-processing and related Dataset structure
+    │   ├── loaders.py
+    │   ├── toxic_data_preprocessing.py
+    │   ├── toxic.py
+    │   ├── celebA.py
+    │   └── celebA_data_preprocessing.py
+    └── engine/                         # concrete training process for different models
+        ├── engine_vae_bias.py
+        ├── engine_bias_predictor.py
+        ├── engine_f_model.py
+        └── engine_vae.py
+```
 
 ## Training Guide
 

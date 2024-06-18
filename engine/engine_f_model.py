@@ -9,9 +9,9 @@ import pandas as pd
 import logging
 logger = logging.getLogger("intersectionalFair")
 
-from loaders import f_model_loaders_load
-from network import ResNet18_Encoder, LinearModel, F_Model_TOXIC
-from evaluation import evaluate_f_model
+from data.loaders import f_model_loaders_load
+from layers.network import ResNet18_Encoder, LinearModel, F_Model_TOXIC
+from utils.evaluation import evaluate_f_model
 
 
 def f_model_train(df, args):

@@ -5,13 +5,13 @@ import os.path as osp
 import torch
 import yaml
 
-from utils import seed_set
-from hypers import CELEBA_2_FEAS_ID, CELEBA_39_FEAS_ID
+from utils.utils import seed_set
+from utils.hypers import CELEBA_2_FEAS_ID, CELEBA_39_FEAS_ID
 # main functions import
-from engine_f_model import f_model_train
+from engine.engine_f_model import f_model_train
 
 # from evaluation import evaluate_a_bias_dataset
-from loggers import TxtLogger, set_logger
+from utils.loggers import TxtLogger, set_logger
 import logging
 
 logger = logging.getLogger("intersectionalFair")

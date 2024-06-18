@@ -6,8 +6,8 @@ import os.path as osp
 import logging
 logger = logging.getLogger("intersectionalFair")
 
-from losses import weighted_mse_loss, cross_entropy
-from evaluation import evaluate_bias_predictor
+from utils.losses import weighted_mse_loss, cross_entropy
+from utils.evaluation import evaluate_bias_predictor
     
 
 def bias_predictor_train(loaders, pred, args):

@@ -4,8 +4,8 @@ import logging
 
 ######################################################
 # Decision Tree V.S. Bias Value Predictor 
-from network import pred_init
-from loaders import a_bias_loaders_load
+from layers.network import pred_init
+from data.loaders import a_bias_loaders_load
 import os.path as osp
 import pickle
 import torch

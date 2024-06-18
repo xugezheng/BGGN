@@ -7,18 +7,18 @@ import yaml
 import ast
 
 
-from network import Encoder, Decoder, pred_init
-from loaders import a_bias_loaders_load
-from utils import seed_set, bias_value_df_generation
-from hypers import CELEBA_2_FEAS_ID, CELEBA_39_FEAS_ID, TOXIC_25_FEAS_ID
+from layers.network import Encoder, Decoder, pred_init
+from data.loaders import a_bias_loaders_load
+from utils.utils import seed_set, bias_value_df_generation
+from utils.hypers import CELEBA_2_FEAS_ID, CELEBA_39_FEAS_ID, TOXIC_25_FEAS_ID
 
 # main functions import
-from engine_bias_predictor import bias_predictor_train
-from engine_vae import vae_train
-from engine_vae_bias import bias_vae_train
+from engine.engine_bias_predictor import bias_predictor_train
+from engine.engine_vae import vae_train
+from engine.engine_vae_bias import bias_vae_train
 
 # from evaluation import evaluate_a_bias_dataset
-from loggers import TxtLogger, set_logger
+from utils.loggers import TxtLogger, set_logger
 import logging
 
 logger = logging.getLogger("intersectionalFair")

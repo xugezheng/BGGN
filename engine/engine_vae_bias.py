@@ -11,16 +11,16 @@ import logging
 
 logger = logging.getLogger("intersectionalFair")
 
-from vae_bias_utils import (
+from utils.vae_bias_utils import (
     grad_activate,
     grad_freeze,
     ten2vec,
     get_z_based_loss,
     get_trA_based_loss
 )
-from utils import save_dset_dict_2_df, df_2_lists
-from evaluation import evaluate_genModel_multi_round
-from evaluation_utils import compare_evaluations
+from utils.utils import save_dset_dict_2_df, df_2_lists
+from utils.evaluation import evaluate_genModel_multi_round
+from utils.evaluation_utils import compare_evaluations
 
 
 def bias_vae_train(Model_en, Model_de, pred, df, args, loaders):

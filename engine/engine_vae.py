@@ -7,8 +7,8 @@ import logging
 logger = logging.getLogger("intersectionalFair")
 
 # VAE pretrain
-from vae_bias_utils import reparameterize_latent
-from evaluation import evaluate_genModel
+from utils.vae_bias_utils import reparameterize_latent
+from utils.evaluation import evaluate_genModel
 
 
 def vae_train(loaders, encoder, decoder, pred, df_regroup, args):

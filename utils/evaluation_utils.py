@@ -6,8 +6,8 @@ import torch
 import time
 from collections import defaultdict
 
-from vae_bias_utils import sample_from_multi_softmax_distribution, get_bias
-from utils import onehot2vec
+from utils.vae_bias_utils import sample_from_multi_softmax_distribution, get_bias
+from utils.utils import onehot2vec
 import logging
 logger = logging.getLogger("intersectionalFair")
 

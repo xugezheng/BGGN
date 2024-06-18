@@ -1,9 +1,5 @@
 import torch
-import numpy as np
-from sklearn.metrics import average_precision_score
-from collections import defaultdict
 import torch.nn.functional as F
-import random
 
 import logging
 logger = logging.getLogger("intersectionalFair")

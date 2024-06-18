@@ -6,8 +6,8 @@ import os
 import os.path as osp
 from sklearn.metrics import confusion_matrix
 
-from utils import save_train_test_dict_2_df, df_2_dict
-from evaluation_utils import avg_evaluations, compare_evaluations, bias_num_ratio
+from utils.utils import save_train_test_dict_2_df, df_2_dict
+from utils.evaluation_utils import avg_evaluations, compare_evaluations, bias_num_ratio
 
 
 import logging
@@ -212,9 +212,9 @@ def evaluate_bias_predictor(pred, dataloader, bias_bar):
 # ======================================================
 # evaluate whole generation process
 # ======================================================
-from evaluation_utils import rr, rr_at_k, dcg_at_k, precision_at_k, recall_at_k, result_dict_2_list
-from evaluation_utils import sampling_for_evaluation, regroup_dataset, filter_and_regroup_genA
-from evaluation_utils import log_evaluation_dict
+from utils.evaluation_utils import rr, rr_at_k, dcg_at_k, precision_at_k, recall_at_k, result_dict_2_list
+from utils.evaluation_utils import sampling_for_evaluation, regroup_dataset, filter_and_regroup_genA
+from utils.evaluation_utils import log_evaluation_dict
 
 def evaluate_genModel(decoder, pred, df_regroup, args, a_bank=None, a_fea_bank=None, gp_bias_bank=None, for_draw=False):
     '''
